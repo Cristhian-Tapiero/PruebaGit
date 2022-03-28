@@ -17,3 +17,39 @@ persona2.nombre = "David"
 persona2.apellido = "Padilla"
 persona2.cedula = 1013098135
 console.log(persona2);
+//Se puede usar get para no usar la forma de funcion
+let Objeto = {
+    nombre: "Mesa",
+    añoCompra: 1989,
+    añoVenta: 2000,
+    //Tambien se puede establecer un metodo set
+    get antiguedad(){
+        return this.añoVenta - this.añoCompra
+    },
+    get mayus(){
+        return this.nombre.toUpperCase()
+    },
+    set mayus(mayus){
+        this.nombre = mayus.toUpperCase()
+        return this.nombre
+    }
+}
+for (cosa in Objeto){
+    console.log(Objeto[cosa]);
+}
+//Finalmente se puede hacer un constructor de objetos en forma de funcion
+
+function Persona(nombre, apellido){
+    this.nombre = nombre
+    this.apellido = apellido
+    this.nombreCompleto = function(){
+        return this.nombre + " " + this.apellido
+    }
+}
+let padre = new Persona("Juan","Agudelo")
+//Usar prototype para hacer elementos que pueden existir o pueden ser necesarios
+Persona.prototype.telefono = 0
+//Tambien el call para llamar metodos dentro de otros objetos
+console.log(persona.miFuncion.call(persona2));
+//En su defecto usar apply que funciona de forma similar pero con un array lleno de los parametros de la funcion
+console.log(persona.miFuncion.apply(persona2))
