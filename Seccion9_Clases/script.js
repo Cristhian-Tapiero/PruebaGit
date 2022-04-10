@@ -2,7 +2,7 @@
 //Las clases tienen nombre, atributos y metodos
 class Persona {
     constructor(nombre, apellido){
-        this.nombre = nombre;
+        this._nombre = nombre;
         this.apellido = apellido;
     }
     //Para crear un metodo get y/o set se hace fuera del constructor
@@ -18,3 +18,4 @@ for (car in persona1){
     console.log(persona1[car]);
 }
 console.log(persona1._nombre);
+//Una clase practicamente es una plantilla para la creacion de objetos.
