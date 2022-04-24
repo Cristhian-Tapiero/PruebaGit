@@ -45,6 +45,7 @@ class Empelado extends Persona{
     //Sobreescritura en JavaScript, un metodo ya definido  en la clase padre desconoce otros atributos de la clase hija en esta caso la funcion nombreCompleto desconoce el atributo departamento
     nombreCompleto(){
         //Tiene que tener el mismo nombre de lo contrario seria creacion de nuevo metodo
+        //Utilizamos super.nombreFuncion() para no tener que volver a escribir los mismos parametros escritos anteriormente
         return super.nombreCompleto() + ", " + this._departamento
     }
 }
@@ -53,3 +54,4 @@ let persona2 = new Empelado ("Cristhian", "Tapiero", "Ingenieria")
 console.log(persona2);
 //Al ser definido en la clase padre no hay ingun inconveniente con la funcion:
 console.log(persona2.nombreCompleto());
+//Clase Object en JavaScript
