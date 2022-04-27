@@ -22,6 +22,10 @@ class Persona {
     nombreCompleto(){
         return this._nombre +" "+this._apellido
     }
+    //Metodo toString()
+    toString(){
+        return this.nombreCompleto()
+    }
 }
 let persona1 = new Persona("Juan", "Agudelo");
 for (car in persona1){
@@ -55,3 +59,4 @@ console.log(persona2);
 //Al ser definido en la clase padre no hay ingun inconveniente con la funcion:
 console.log(persona2.nombreCompleto());
 //Clase Object en JavaScript
+console.log(persona2.toString()); //Esto funciona de esta manera debido a polimorfismo de JavaScript por lo tanto no es necesario debido al metodo toString()
